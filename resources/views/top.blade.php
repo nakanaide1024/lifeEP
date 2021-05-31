@@ -7,6 +7,12 @@
   <title>lifeEP</title>
 </head>
 <body>
-  hello world
+  <header>
+    @include('header')
+  </header>
+    @yield('content')
+  <footer>
+    @include('footer')
+  </footer>
 </body>
 </html>
