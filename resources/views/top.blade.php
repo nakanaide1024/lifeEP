@@ -14,8 +14,5 @@
     @include('header')
   </header>
     @yield('content')
-  <footer>
-   {{-- @include('footer') --}}
-  </footer>
 </body>
 </html>
