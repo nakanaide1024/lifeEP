@@ -16,3 +16,7 @@ use \App\Http\Controllers\EpisodeController;
 */
 
 Route::get('/',[EpisodeController::class,'index'])->name('top');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
