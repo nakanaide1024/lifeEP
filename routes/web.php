@@ -17,6 +17,3 @@ use \App\Http\Controllers\EpisodeController;
 
 Route::get('/',[EpisodeController::class,'index'])->name('top');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
