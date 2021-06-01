@@ -16,3 +16,4 @@ use \App\Http\Controllers\EpisodeController;
 */
 
 Route::get('/',[EpisodeController::class,'index'])->name('top');
+
