@@ -18,6 +18,7 @@ use \App\Http\Controllers\EpisodeController;
 */
 
 Route::get('/',[EpisodeController::class,'index'])->name('top');
+Route::get('/mypage',[EpisodeController::class, 'show'])->name('show');
 
 Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class,'login']);
