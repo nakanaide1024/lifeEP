@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       @if (!Auth::check())
-      <a class="nav-item nav-link active" href=#>ログイン</a>
+      <a class="nav-item nav-link active" href="{{ route('login') }}">ログイン</a>
       <a class="nav-item nav-link active" href="{{ route('register') }}">新規登録</a>
       @else
       <a class="nav-item nav-link active" href="{{ route('logout') }}"
