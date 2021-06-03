@@ -6,7 +6,14 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href=#>ログイン</a>
-      <a class="nav-item nav-link active" href=#>ログアウト</a>
+      <a class="nav-item nav-link active" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+            ログアウト
+      </a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+      </form>
       <a class="nav-item nav-link active" href="{{ route('register') }}">新規登録</a>
     </div>
   </div>
