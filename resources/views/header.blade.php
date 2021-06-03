@@ -6,6 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href=#>ログイン</a>
+      <a class="nav-item nav-link active" href=#>ログアウト</a>
       <a class="nav-item nav-link active" href="{{ route('register') }}">新規登録</a>
     </div>
   </div>
