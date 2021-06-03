@@ -24,7 +24,27 @@
           </h2>
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <div class="row">
+                <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#work-id" aria-expanded="true" aria-controls="collapseOne">
+                          タイトル
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="work-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5 class="card-title">備考欄</h5>
+                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="#" class="btn btn-primary">削除する</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -42,7 +62,27 @@
           </h2>
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <div class="row">
+                <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#love-id" aria-expanded="true" aria-controls="collapseOne">
+                          タイトル
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="love-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5 class="card-title">備考欄</h5>
+                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="#" class="btn btn-primary">削除する</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -60,7 +100,27 @@
           </h2>
           <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <div class="row">
+                <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#hobby-id" aria-expanded="true" aria-controls="collapseOne">
+                          タイトル
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="hobby-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5 class="card-title">備考欄</h5>
+                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="#" class="btn btn-primary">削除する</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
             </div>
           </div>
         </div>
@@ -78,17 +138,37 @@
           </h2>
           <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              <div class="row">
+                <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#day-id" aria-expanded="true" aria-controls="collapseOne">
+                          タイトル
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="day-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <h5 class="card-title">備考欄</h5>
+                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="#" class="btn btn-primary">削除する</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
             </div>
           </div>
         </div>
       </div>
       <div class="col-1"></div>
     </div>
-    <div class="row bg-info" style="margin-top: 20px;">
-      <div class="col text-center">
-        <span class="text-light">©︎上りだけ坂 2021</span>
-      </div>
-    </div>
   </div>
+  <footer class="footer bg-info" style="margin-top: 8%;">
+    <div class="container text-center">
+      <span class="text-light">©︎上りだけ坂 2021</span>
+    </div>
+  </footer>
 @endsection
