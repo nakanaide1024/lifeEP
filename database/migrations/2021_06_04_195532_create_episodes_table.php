@@ -13,11 +13,22 @@ class CreateEpisodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('episodes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+        if(!Schema::hasTable('episodes')){
+
+            Schema::create('episodes', function (Blueprint $table) {
+                $table->id();
+                $table->string('title', 100);
+                $table->text('remarks')->nullable();
+                $table->integer('category');
+                $table->foreignId('user_id');
+                $table->timestamps();
+    
+                $table->foreign('user_id')
+                      ->references('id')
+                      ->on('users');
+            });
+          }
+        }
 
     /**
      * Reverse the migrations.
