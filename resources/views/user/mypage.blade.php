@@ -166,9 +166,5 @@
       <div class="col-1"></div>
     </div>
   </div>
-  <footer class="footer bg-info" style="margin-top: 8%;">
-    <div class="container text-center">
-      <span class="text-light">©︎上りだけ坂 2021</span>
-    </div>
-  </footer>
+@include('footer')
 @endsection
