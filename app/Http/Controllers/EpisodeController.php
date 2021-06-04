@@ -24,7 +24,11 @@ class EpisodeController extends Controller
      */
 
      public function show(){
-         $auth = Auth::user();
-         return view('user.mypage', ['auth' => $auth]);
+         if(!Auth::check()){
+             return view('first');
+         }else{
+             $auth = Auth::user();
+             return view('user.mypage', ['auth' => $auth]);
+         }
      }
 }
