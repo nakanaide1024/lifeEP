@@ -22,6 +22,8 @@ Route::get('/mypage',[EpisodeController::class, 'show'])->name('show');
 
 Route::get('/new',[EpisodeController::class, 'new'])->name('new');
 Route::post('/create',[EpisodeController::class, 'exeStore'])->name('create');
+Route::get('/edit/{id}',[EpisodeController::class, 'edit'])->name('edit');
+Route::post('/update',[EpisodeController::class, 'exeUpdate'])->name('update');
 
 Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class,'login']);
