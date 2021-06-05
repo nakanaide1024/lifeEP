@@ -49,6 +49,7 @@
               <option value="2">趣味</option>
               <option value="3">日常</option>
             </select>
+            <input type="hidden" name="user_id" value="{{$auth->id}}">
             <div class="mt-5">
                 <a class="btn btn-secondary" href="{{ route('show') }}">
                     キャンセル
