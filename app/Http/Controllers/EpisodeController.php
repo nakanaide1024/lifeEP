@@ -120,5 +120,26 @@ class EpisodeController extends Controller
             return redirect(route('show'));
         }
 
+      /**
+      * エピソード削除
+      *@param int $id
+      *@return view
+      */
+        public function exeDelete($id){
+        if(!Auth::check()){
+            return view('first');
+        }else{
+
+            try {
+                Episode::destroy($id);
+
+            } catch (\Throwable $e) {
+                echo $e->getMessage();
+                abort(500);
+            }
+            
+            return redirect(route('show'));
+        }
+     }
 
 }
