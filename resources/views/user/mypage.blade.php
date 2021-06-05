@@ -25,25 +25,29 @@
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
               <div class="row">
+                @foreach($episodes as $episode)
+                @if($episode->category == 0 && $episode->user_id == $id)
                 <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#work-id" aria-expanded="true" aria-controls="collapseOne">
-                          タイトル
+                          {{$episode->title}}
                         </button>
                       </h5>
                     </div>
                     <div id="work-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
-                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <p class="card-text">{{$episode->remarks}}</p>
                         <a href="#" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endif
+                @endforeach
               </div>
             </div>
           </div>
@@ -63,25 +67,29 @@
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body">
               <div class="row">
+                @foreach($episodes as $episode)
+                @if($episode->category == 1 && $episode->user_id == $id)
                 <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#love-id" aria-expanded="true" aria-controls="collapseOne">
-                          タイトル
+                        {{$episode->title}}
                         </button>
                       </h5>
                     </div>
                     <div id="love-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
-                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <p class="card-text">{{$episode->remarks}}</p>
                         <a href="#" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endif
+                @endforeach
               </div>
             </div>
           </div>
@@ -101,25 +109,29 @@
           <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
             <div class="accordion-body">
               <div class="row">
+                @foreach($episodes as $episode)
+                @if($episode->category == 2 && $episode->user_id == $id)
                 <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#hobby-id" aria-expanded="true" aria-controls="collapseOne">
-                          タイトル
+                        {{$episode->title}}
                         </button>
                       </h5>
                     </div>
                     <div id="hobby-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
-                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <p class="card-text">{{$episode->remarks}}</p>
                         <a href="#" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endif
+                @endforeach
               </div> 
             </div>
           </div>
@@ -139,25 +151,29 @@
           <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
             <div class="accordion-body">
               <div class="row">
+                @foreach($episodes as $episode)
+                @if($episode->category == 3 && $episode->user_id == $id)
                 <div class="col-lg-4 accordion" id="accordionExample" style="margin-top: 5px;">
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#day-id" aria-expanded="true" aria-controls="collapseOne">
-                          タイトル
+                        {{$episode->title}}
                         </button>
                       </h5>
                     </div>
                     <div id="day-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
-                        <p class="card-text">キーワード、話す時のコツ</p>
+                        <p class="card-text">{{$episode->remarks}}</p>
                         <a href="#" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endif
+                @endforeach
               </div> 
             </div>
           </div>
