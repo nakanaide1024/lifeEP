@@ -31,16 +31,16 @@
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#work-id" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#work-{{$episode->id}}" aria-expanded="true" aria-controls="collapseOne">
                           {{$episode->title}}
                         </button>
                       </h5>
                     </div>
-                    <div id="work-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="work-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
-                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
@@ -73,16 +73,16 @@
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#love-id" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#love-{{$episode->id}}" aria-expanded="true" aria-controls="collapseOne">
                         {{$episode->title}}
                         </button>
                       </h5>
                     </div>
-                    <div id="love-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="love-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
-                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
@@ -115,16 +115,16 @@
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#hobby-id" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#hobby-{{$episode->id}}" aria-expanded="true" aria-controls="collapseOne">
                         {{$episode->title}}
                         </button>
                       </h5>
                     </div>
-                    <div id="hobby-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="hobby-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
-                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
@@ -157,16 +157,16 @@
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h5 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#day-id" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#day-{{$episode->id}}" aria-expanded="true" aria-controls="collapseOne">
                         {{$episode->title}}
                         </button>
                       </h5>
                     </div>
-                    <div id="day-id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="day-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
-                        <a href="#" class="btn btn-primary">編集する</a>
+                        <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a href="#" class="btn btn-primary">削除する</a>
                       </div>
                     </div>
