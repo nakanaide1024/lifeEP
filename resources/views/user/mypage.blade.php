@@ -41,7 +41,14 @@
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
-                        <a href="#" class="btn btn-primary">削除する</a>
+                        <a class="btn btn-primary"
+                          onclick="event.preventDefault()
+                          document.getElementById('delete-work').submit();">
+                            削除する
+                        </a>
+                        <form id="delete-work" method="POST" action="{{ route('delete', $episode->id) }}">
+                        @csrf
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -83,7 +90,14 @@
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
-                        <a href="#" class="btn btn-primary">削除する</a>
+                        <a class="btn btn-primary"
+                          onclick="event.preventDefault()
+                          document.getElementById('delete-love').submit();">
+                            削除する
+                        </a>
+                        <form id="delete-love" method="POST" action="{{ route('delete', $episode->id) }}">
+                        @csrf
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -125,7 +139,14 @@
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
-                        <a href="#" class="btn btn-primary">削除する</a>
+                        <a class="btn btn-primary"
+                          onclick="event.preventDefault()
+                          document.getElementById('delete-hobby').submit();">
+                            削除する
+                        </a>
+                        <form id="delete-hobby" method="POST" action="{{ route('delete', $episode->id) }}">
+                        @csrf
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -167,7 +188,14 @@
                         <h5 class="card-title">備考欄</h5>
                         <p class="card-text">{{$episode->remarks}}</p>
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
-                        <a href="#" class="btn btn-primary">削除する</a>
+                        <a class="btn btn-primary"
+                          onclick="event.preventDefault()
+                          document.getElementById('delete-day').submit();">
+                            削除する
+                        </a>
+                        <form id="delete-day" method="POST" action="{{ route('delete', $episode->id) }}">
+                        @csrf
+                        </form>
                       </div>
                     </div>
                   </div>
