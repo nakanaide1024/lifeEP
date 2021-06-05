@@ -31,7 +31,9 @@ class EpisodeController extends Controller
              return view('first');
          }else{
              $auth = Auth::user();
-             return view('user.mypage', ['auth' => $auth]);
+             $id = Auth::id();
+             $episodes = Episode::all();
+             return view('user.mypage', ['auth' => $auth, 'episodes' => $episodes, 'id' => $id] );
          }
      }
 
