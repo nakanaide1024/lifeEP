@@ -73,4 +73,52 @@ class EpisodeController extends Controller
         }
             return redirect(route('show'));
         }
+
+      /**
+      * 編集ページを呼び出す
+      *@param int $id
+      *@return view
+      */
+     public function edit($id){
+        if(!Auth::check()){
+            return view('first');
+        }else{
+
+            $episode = Episode::find($id);
+
+            $auth = Auth::user();
+            return view('user.edit', ['auth' => $auth, 'episode' => $episode]);
+        }
+     }
+
+     /**
+      * エピソードを編集する
+      *
+      *@param EpisodeRequest $request
+      *@return view
+      */
+      public function exeUpdate(EpisodeRequest $request){
+    
+        $inputs = $request->all();
+        
+        DB::beginTransaction();
+        try {
+            //エピソードを登録
+            $episode = Episode::find($inputs['id']);
+            $episode->fill([
+                'title' => $inputs['title'],
+                'remarks' => $inputs['remarks'],
+                'category' => $inputs['category'],
+            ]);
+            $episode->save();
+            DB::commit();
+        } catch (\Throwable $e) {
+            echo $e->getMessage();
+            DB::rollBack();
+            abort(500);
+        }
+            return redirect(route('show'));
+        }
+
+
 }
