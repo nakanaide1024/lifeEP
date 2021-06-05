@@ -5,7 +5,7 @@
       <div class="col-lg-6 display-2">
         {{ $auth->nickname }}
       </div>
-      <div class="col-lg-3" style="line-height: 4rem;">エピソードを追加する</div>
+      <div class="col-lg-3" style="line-height: 4rem;"> <a href="{{route('new')}}">エピソードを追加する</a></div>
       <div class="col-lg-3" style="line-height: 4rem;">共有する</div>
     </div>
     <div class="row" style="line-height: 4rem; margin-top: 2rem;">
@@ -166,5 +166,7 @@
       <div class="col-1"></div>
     </div>
   </div>
-@include('footer')
+  <footer class="footer bg-info" style="margin-top: 8%;">
+  @include('footer')
+  </footer>
 @endsection
