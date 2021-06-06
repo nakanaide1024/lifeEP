@@ -43,15 +43,18 @@
             </div>
             <p>カテゴリー</p>
             <select class="form-select" aria-label="Default select example" name="category" id="category">
-              <option value="0">仕事</option>
-              <option value="1">恋愛</option>
-              <option value="2">趣味</option>
-              <option value="3">日常</option>
+              @for($i = 0; $i < 4; $i++)
+              @if($i == $episode->category)
+              <option value="{{$i}}" selected>{{$category[$i]}}</option>
+              @else
+              <option value="{{$i}}">{{$category[$i]}}</option>
+              @endif
+              @endfor
             </select>
             <input type="hidden" name="user_id" value="{{$auth->id}}">
             <input type="hidden" name="id" value="{{$episode->id}}">
             <div class="mt-5">
-                <a class="btn btn-secondary" href="{{ route('show') }}">
+                <a class="btn btn-secondary" href="/mypage/{{ Auth::user()->id }}">
                     キャンセル
                 </a>
                 <button type="submit" class="btn btn-primary">

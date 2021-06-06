@@ -17,7 +17,7 @@
       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
       </form>
-      <a class="nav-item nav-link active" href="{{ route('show') }}">マイページ</a>
+      <a class="nav-item nav-link active" href="/mypage/{{ Auth::user()->id }}">マイページ</a>
       @endif
     </div>
   </div>

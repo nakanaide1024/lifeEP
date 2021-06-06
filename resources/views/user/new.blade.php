@@ -51,7 +51,7 @@
             </select>
             <input type="hidden" name="user_id" value="{{$auth->id}}">
             <div class="mt-5">
-                <a class="btn btn-secondary" href="{{ route('show') }}">
+                <a class="btn btn-secondary" href="/mypage/{{ Auth::user()->id }}">
                     キャンセル
                 </a>
                 <button type="submit" class="btn btn-primary">
