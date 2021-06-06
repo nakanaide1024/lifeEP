@@ -71,7 +71,7 @@ class EpisodeController extends Controller
             DB::rollBack();
             abort(500);
         }
-            return redirect(route('show'));
+            return redirect(route('show',['id' => Auth::user()->id]));
         }
 
       /**
@@ -84,10 +84,11 @@ class EpisodeController extends Controller
             return view('first');
         }else{
 
+            $category = array('仕事','恋愛','趣味','日常');
             $episode = Episode::find($id);
 
             $auth = Auth::user();
-            return view('user.edit', ['auth' => $auth, 'episode' => $episode]);
+            return view('user.edit', ['auth' => $auth, 'episode' => $episode, 'category' => $category]);
         }
      }
 
@@ -117,7 +118,7 @@ class EpisodeController extends Controller
             DB::rollBack();
             abort(500);
         }
-            return redirect(route('show'));
+            return redirect(route('show',['id' => Auth::user()->id]));
         }
 
       /**
@@ -138,7 +139,7 @@ class EpisodeController extends Controller
                 abort(500);
             }
             
-            return redirect(route('show'));
+            return redirect(route('show', ['id' => Auth::user()->id]));
         }
      }
 
