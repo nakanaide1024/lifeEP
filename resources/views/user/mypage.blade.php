@@ -229,6 +229,7 @@
   </footer>
   <script>
   function copy(){
+    event.preventDefault();
     var url = location.href;
     var title = document.title;
     navigator.clipboard.writeText(title + '\n' + url).then(e => {
