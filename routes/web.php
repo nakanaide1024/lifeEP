@@ -27,6 +27,7 @@ Route::post('/update',[EpisodeController::class, 'exeUpdate'])->name('update');
 Route::post('/delete/{id}',[EpisodeController::class, 'exeDelete'])->name('delete');
 
 Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
+Route::get('guest', [LoginController::class,'guestLogin'])->name('guest');
 Route::post('login', [LoginController::class,'login']);
 Route::post('logout', [LoginController::class,'logout'])->name('logout');
 

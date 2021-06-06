@@ -8,6 +8,7 @@
       @if (!Auth::check())
       <a class="nav-item nav-link active" href="{{ route('login') }}">ログイン</a>
       <a class="nav-item nav-link active" href="{{ route('register') }}">新規登録</a>
+      <a class="nav-item nav-link active" href="{{ route('guest') }}">ゲストログイン</a>
       @else
       <a class="nav-item nav-link active" href="{{ route('logout') }}"
         onclick="event.preventDefault();
