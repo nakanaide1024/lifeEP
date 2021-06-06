@@ -18,7 +18,7 @@ use \App\Http\Controllers\EpisodeController;
 */
 
 Route::get('/',[EpisodeController::class,'index'])->name('top');
-Route::get('/mypage',[EpisodeController::class, 'show'])->name('show');
+Route::get('/mypage/{id}',[EpisodeController::class, 'show'])->name('show');
 
 Route::get('/new',[EpisodeController::class, 'new'])->name('new');
 Route::post('/create',[EpisodeController::class, 'exeStore'])->name('create');

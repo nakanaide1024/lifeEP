@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Episode;
+use App\Models\User;
 use App\Http\Requests\EpisodeRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,19 +23,16 @@ class EpisodeController extends Controller
 
     /**
      * マイページを呼び出す
-     * @param void
+     * @param int $id
      * @return view
      */
 
-     public function show(){
-         if(!Auth::check()){
-             return view('first');
-         }else{
-             $auth = Auth::user();
-             $id = Auth::id();
-             $episodes = Episode::all();
-             return view('user.mypage', ['auth' => $auth, 'episodes' => $episodes, 'id' => $id] );
-         }
+     public function show($id){
+
+        $auth = User::find($id);
+        $episodes = Episode::all();
+        return view('user.mypage', ['auth' => $auth, 'episodes' => $episodes, 'id' => $id] );
+    
      }
 
      /**
@@ -58,21 +56,24 @@ class EpisodeController extends Controller
       *@return view
       */
       public function exeStore(EpisodeRequest $request){
-    
-        $inputs = $request->all();
+          if (!Auth::check()) {
+              return view('first');
+          } else {
+              $inputs = $request->all();
         
-        DB::beginTransaction();
-        try {
-            //エピソードを登録
-            Episode::create($inputs);
-            DB::commit();
-        } catch (\Throwable $e) {
-            echo $e->getMessage();
-            DB::rollBack();
-            abort(500);
-        }
-            return redirect(route('show'));
-        }
+              DB::beginTransaction();
+              try {
+                  //エピソードを登録
+                  Episode::create($inputs);
+                  DB::commit();
+              } catch (\Throwable $e) {
+                  echo $e->getMessage();
+                  DB::rollBack();
+                  abort(500);
+              }
+              return redirect(route('show', ['id' => Auth::user()->id]));
+          }
+      }
 
       /**
       * 編集ページを呼び出す
@@ -84,10 +85,11 @@ class EpisodeController extends Controller
             return view('first');
         }else{
 
+            $category = array('仕事','恋愛','趣味','日常');
             $episode = Episode::find($id);
 
             $auth = Auth::user();
-            return view('user.edit', ['auth' => $auth, 'episode' => $episode]);
+            return view('user.edit', ['auth' => $auth, 'episode' => $episode, 'category' => $category]);
         }
      }
 
@@ -98,27 +100,30 @@ class EpisodeController extends Controller
       *@return view
       */
       public function exeUpdate(EpisodeRequest $request){
-    
-        $inputs = $request->all();
+          if (!Auth::check()) {
+              return view('first');
+          } else {
+              $inputs = $request->all();
         
-        DB::beginTransaction();
-        try {
-            //エピソードを登録
-            $episode = Episode::find($inputs['id']);
-            $episode->fill([
+              DB::beginTransaction();
+              try {
+                  //エピソードを登録
+                  $episode = Episode::find($inputs['id']);
+                  $episode->fill([
                 'title' => $inputs['title'],
                 'remarks' => $inputs['remarks'],
                 'category' => $inputs['category'],
             ]);
-            $episode->save();
-            DB::commit();
-        } catch (\Throwable $e) {
-            echo $e->getMessage();
-            DB::rollBack();
-            abort(500);
-        }
-            return redirect(route('show'));
-        }
+                  $episode->save();
+                  DB::commit();
+              } catch (\Throwable $e) {
+                  echo $e->getMessage();
+                  DB::rollBack();
+                  abort(500);
+              }
+              return redirect(route('show', ['id' => Auth::user()->id]));
+          }
+      }
 
       /**
       * エピソード削除
@@ -138,7 +143,7 @@ class EpisodeController extends Controller
                 abort(500);
             }
             
-            return redirect(route('show'));
+            return redirect(route('show', ['id' => Auth::user()->id]));
         }
      }
 

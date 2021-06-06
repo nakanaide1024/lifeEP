@@ -5,8 +5,14 @@
       <div class="col-lg-6 display-2">
         {{ $auth->nickname }}
       </div>
-      <div class="col-lg-3" style="line-height: 4rem;"> <a href="{{route('new')}}">エピソードを追加する</a></div>
-      <div class="col-lg-3" style="line-height: 4rem;">共有する</div>
+      <div class="col-lg-3" style="line-height: 4rem;">
+        @if(Auth::check() && Auth::user()->id == $auth->id)
+        <a href="{{route('new')}}">エピソードを追加する</a>
+        @else
+        閲覧用ページ
+        @endif
+      </div>
+      <div class="col-lg-3" style="line-height: 4rem;"><a href="" onclick="copy()">共有する</a></div>
     </div>
     <div class="row" style="line-height: 4rem; margin-top: 2rem;">
       <div class="col-4"></div>
@@ -36,6 +42,7 @@
                         </button>
                       </h5>
                     </div>
+                    @if(Auth::check() && Auth::user()->id == $episode->user_id)
                     <div id="work-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
@@ -51,6 +58,7 @@
                         </form>
                       </div>
                     </div>
+                    @endif
                   </div>
                 </div>
                 @endif
@@ -85,6 +93,7 @@
                         </button>
                       </h5>
                     </div>
+                    @if(Auth::check() && Auth::user()->id == $episode->user_id)
                     <div id="love-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
@@ -100,6 +109,7 @@
                         </form>
                       </div>
                     </div>
+                    @endif
                   </div>
                 </div>
                 @endif
@@ -134,6 +144,7 @@
                         </button>
                       </h5>
                     </div>
+                    @if(Auth::check() && Auth::user()->id == $episode->user_id)
                     <div id="hobby-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
@@ -149,6 +160,7 @@
                         </form>
                       </div>
                     </div>
+                    @endif
                   </div>
                 </div>
                 @endif
@@ -183,6 +195,7 @@
                         </button>
                       </h5>
                     </div>
+                    @if(Auth::check() && Auth::user()->id == $episode->user_id)
                     <div id="day-{{$episode->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         <h5 class="card-title">備考欄</h5>
@@ -198,6 +211,7 @@
                         </form>
                       </div>
                     </div>
+                    @endif
                   </div>
                 </div>
                 @endif
@@ -213,4 +227,13 @@
   <footer class="footer bg-info" style="margin-top: 8%;">
   @include('footer')
   </footer>
+  <script>
+  function copy(){
+    var url = location.href;
+    var title = document.title;
+    navigator.clipboard.writeText(title + '\n' + url).then(e => {
+        alert('コピーできました');
+    });
+  }
+  </script>
 @endsection
