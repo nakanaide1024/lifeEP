@@ -15,5 +15,6 @@
     @include('header')
   </header>
     @yield('content')
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
