@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Episode;
+use App\Models\User;
 use App\Http\Requests\EpisodeRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,19 +23,16 @@ class EpisodeController extends Controller
 
     /**
      * マイページを呼び出す
-     * @param void
+     * @param int $id
      * @return view
      */
 
-     public function show(){
-         if(!Auth::check()){
-             return view('first');
-         }else{
-             $auth = Auth::user();
-             $id = Auth::id();
-             $episodes = Episode::all();
-             return view('user.mypage', ['auth' => $auth, 'episodes' => $episodes, 'id' => $id] );
-         }
+     public function show($id){
+
+        $auth = User::find($id);
+        $episodes = Episode::all();
+        return view('user.mypage', ['auth' => $auth, 'episodes' => $episodes, 'id' => $id] );
+    
      }
 
      /**
