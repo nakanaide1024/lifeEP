@@ -230,11 +230,13 @@
   <script>
   function copy(){
     event.preventDefault();
-    var url = location.href;
-    var title = document.title;
-    navigator.clipboard.writeText(title + '\n' + url).then(e => {
-        alert('コピーできました');
-    });
+    $(document.body).append("<textarea id=\"copyTarget\" style=\"position:absolute; left:-9999px; top:0px;\" readonly=\"readonly\">" +location.href+ "</textarea>");
+    let obj = document.getElementById("copyTarget");
+    let range = document.createRange();
+    range.selectNode(obj);
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    alert('コピーできました');
   }
   </script>
 @endsection
