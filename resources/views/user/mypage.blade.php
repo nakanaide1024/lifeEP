@@ -50,10 +50,10 @@
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a class="btn btn-primary"
                           onclick="event.preventDefault()
-                          document.getElementById('delete-work').submit();">
+                          document.getElementById('delete-work-{{$episode->id}}').submit();">
                             削除する
                         </a>
-                        <form id="delete-work" method="POST" action="{{ route('delete', $episode->id) }}">
+                        <form id="delete-work-{{$episode->id}}" method="POST" action="{{ route('delete', $episode->id) }}">
                         @csrf
                         </form>
                       </div>
@@ -101,10 +101,10 @@
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a class="btn btn-primary"
                           onclick="event.preventDefault()
-                          document.getElementById('delete-love').submit();">
+                          document.getElementById('delete-love-{{$episode->id}}').submit();">
                             削除する
                         </a>
-                        <form id="delete-love" method="POST" action="{{ route('delete', $episode->id) }}">
+                        <form id="delete-love-{{$episode->id}}" method="POST" action="{{ route('delete', $episode->id) }}">
                         @csrf
                         </form>
                       </div>
@@ -152,10 +152,10 @@
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a class="btn btn-primary"
                           onclick="event.preventDefault()
-                          document.getElementById('delete-hobby').submit();">
+                          document.getElementById('delete-hobby-{{$episode->id}}').submit();">
                             削除する
                         </a>
-                        <form id="delete-hobby" method="POST" action="{{ route('delete', $episode->id) }}">
+                        <form id="delete-hobby-{{$episode->id}}" method="POST" action="{{ route('delete', $episode->id) }}">
                         @csrf
                         </form>
                       </div>
@@ -203,10 +203,10 @@
                         <a href="/edit/{{$episode->id}}" class="btn btn-primary">編集する</a>
                         <a class="btn btn-primary"
                           onclick="event.preventDefault()
-                          document.getElementById('delete-day').submit();">
+                          document.getElementById('delete-day-{{$episode->id}}').submit();">
                             削除する
                         </a>
-                        <form id="delete-day" method="POST" action="{{ route('delete', $episode->id) }}">
+                        <form id="delete-day-{{$episode->id}}" method="POST" action="{{ route('delete', $episode->id) }}">
                         @csrf
                         </form>
                       </div>
