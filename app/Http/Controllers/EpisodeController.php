@@ -36,7 +36,7 @@ class EpisodeController extends Controller
      }
 
      /**
-      * 投稿ページを呼び出す
+      * エピソード投稿ページを呼び出す
       *
       *@return view
       */
@@ -76,7 +76,7 @@ class EpisodeController extends Controller
       }
 
       /**
-      * 編集ページを呼び出す
+      * エピソード編集ページを呼び出す
       *@param int $id
       *@return view
       */
@@ -107,7 +107,7 @@ class EpisodeController extends Controller
         
               DB::beginTransaction();
               try {
-                  //エピソードを登録
+                  //エピソードを更新
                   $episode = Episode::find($inputs['id']);
                   $episode->fill([
                 'title' => $inputs['title'],
