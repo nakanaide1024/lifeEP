@@ -40,3 +40,30 @@ http://life-ep.herokuapp.com/mypage/5
 - テストコードを実装したい。
 - 他のSNSサイトにリンクや新しいエピソードを追加した際に押しさせができるようにしたい。
 - セキュリティがまだ脆弱なので強化したい。
+
+# テーブル設計
+
+## Usersテーブル
+
+| column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| email            | string  | null: false |
+| password         | string  | null: false |
+| nickname         | string  | null: false |
+
+### Association
+
+- has_many :episodes
+
+## Episodes
+
+| column                | Type       | Options                                       |
+| --------------------- | ---------- | --------------------------------------------- |
+| title                 | string     | null: false                                   |
+| user_id               | foreignId  | null: false, foreign_key: true                |
+| remarks               | text       | null: ture                                    |
+| category              | integer    | null: false                                   |
+
+### Association
+
+- belongs_to :User
