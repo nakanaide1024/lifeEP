@@ -32,6 +32,7 @@ http://life-ep.herokuapp.com/mypage/5
 # 使用した技術（開発環境）
 ## フレームワーク
 - Laravel 8.44.0
+- Bootstrap
 ## データベース
 - MYSQL
 
